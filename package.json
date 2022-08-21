@@ -18,6 +18,7 @@
   },
   "homepage": "https://github.com/tomsdoo/electronade-command#readme",
   "devDependencies": {
-    "electron": "^20.0.3"
+    "electron": "^20.0.3",
+    "ts-node": "^10.9.1"
   }
 }
