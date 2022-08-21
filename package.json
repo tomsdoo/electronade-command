@@ -16,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/tomsdoo/electronade-command/issues"
   },
-  "homepage": "https://github.com/tomsdoo/electronade-command#readme"
+  "homepage": "https://github.com/tomsdoo/electronade-command#readme",
+  "devDependencies": {
+    "electron": "^20.0.3"
+  }
 }
