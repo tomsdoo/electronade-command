@@ -8,18 +8,18 @@ describe("handles", () => {
   it("electronade-command:execute eventName exists", () => {
     assert(
       handles.find(
-        ({ eventName }) =>
-          eventName === "electronade-command:execute"
+        ({ eventName }) => eventName === "electronade-command:execute"
       )
     );
   });
 
   it("electronade-command:execute handler", async () => {
     assert.equal(
-      await (handles.find(
-        ({ eventName }) =>
-          eventName === "electronade-command:execute"
-        ) as { handler: Function }).handler({}, "ls"),
+      await (
+        handles.find(
+          ({ eventName }) => eventName === "electronade-command:execute"
+        ) as { handler: Function }
+      ).handler({}, "ls"),
       await Command.execute("ls")
     );
   });
