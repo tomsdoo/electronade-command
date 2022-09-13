@@ -7,6 +7,8 @@
   "types": "dist/esm/index.d.ts",
   "scripts": {
     "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
+    "fix-staged:src": "npm run lint:src && npm run format:src",
+    "fix-staged:test": "npm run lint:test && npm run format:test",
     "format": "npm run format:src && npm run format:test",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
@@ -16,6 +18,10 @@
     "prepare": "husky install",
     "empty-message": "echo husky works",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/**/*.ts\" --timeout 30000"
+  },
+  "lint-staged": {
+    "src/**/*.ts": "npm run fix-staged:src",
+    "test/**/*.ts": "npm run fix-staged:test"
   },
   "repository": {
     "type": "git",
