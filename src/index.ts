@@ -1,16 +1,17 @@
 import { Command } from "./command";
+// eslint-disable-next-line @typescript-eslint/no-var-requires
 const { ipcRenderer } = require("electron");
 
 export const handles = [
   {
     eventName: "electronade-command:execute",
-    handler: (event: any, commandLine: string) => Command.execute(commandLine),
+    handler: async (event: any, commandLine: string) => await Command.execute(commandLine),
   },
 ];
 
 export const preloadObject = {
   command: {
-    execute: (commandLine: string) =>
-      ipcRenderer.invoke("electronade-command:execute", commandLine),
+    execute: async (commandLine: string) =>
+      await ipcRenderer.invoke("electronade-command:execute", commandLine),
   },
 };

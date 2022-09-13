@@ -1,7 +1,7 @@
 import { describe, it } from "mocha";
 import { strict as assert } from "assert";
 
-import { handles, preloadObject } from "../src/";
+import { handles } from "../src/";
 import { Command } from "../src/command";
 
 describe("handles", () => {
