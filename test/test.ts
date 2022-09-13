@@ -6,7 +6,7 @@ import { handles, preloadObject } from "../src/";
 const ipcRenderer: {
   invoke: (eventName: string, ...args: any[]) => Promise<any>;
 } = {
-  invoke: (eventName: string) => Promise.resolve(eventName)
+  invoke: (eventName: string) => Promise.resolve(eventName),
 };
 
 const handleDictionary = Object.fromEntries(
@@ -16,8 +16,8 @@ const handleDictionary = Object.fromEntries(
 describe("preloadObject to handles", () => {
   it("preloadObject.command.execcute()", async () => {
     assert(
-      await eval(preloadObject.command.execute.toString())("dummyCommand")
-        in handleDictionary
+      (await eval(preloadObject.command.execute.toString())("dummyCommand")) in
+        handleDictionary
     );
   });
 });
