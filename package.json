@@ -9,16 +9,19 @@
     "build": "tsc --project tsconfig.cjs.json && tsc --project tsconfig.esm.json",
     "fix-staged:src": "npm run lint:src && npm run format:src",
     "fix-staged:test": "npm run lint:test && npm run format:test",
-    "format": "npm run format:src && npm run format:test",
+    "format": "npm run format:src && npm run format:test && npm run format:document",
+    "format:document": "prettier --write docs/**/*.html",
     "format:src": "prettier --write src/**/*.ts",
     "format:test": "prettier --write test/**/*.ts",
     "lint": "npm run lint:src && npm run lint:test",
     "lint:src": "eslint src/**/*.ts",
     "lint:test": "eslint test/**/*.ts",
     "prepare": "husky install",
+    "serve:doc": "mdbook --serve --directory docs",
     "test": "TS_NODE_COMPILER_OPTIONS='{\"module\":\"commonjs\"}' mocha -r ts-node/register \"test/**/*.ts\" --timeout 30000"
   },
   "lint-staged": {
+    "docs/**/*.html": "npm run format:document",
     "src/**/*.ts": "npm run fix-staged:src",
     "test/**/*.ts": "npm run fix-staged:test"
   },
@@ -34,6 +37,7 @@
   },
   "homepage": "https://github.com/tomsdoo/electronade-command#readme",
   "devDependencies": {
+    "@tomsd/md-book": "^0.16.0",
     "@types/mocha": "^9.1.1",
     "@types/sinon": "^10.0.13",
     "@typescript-eslint/eslint-plugin": "^5.37.0",
