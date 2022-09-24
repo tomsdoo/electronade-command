@@ -1,7 +1,7 @@
 {
   "name": "electronade-command",
   "version": "0.1.0",
-  "description": "",
+  "description": "It provides command execution feature for electronade.",
   "main": "dist/cjs/index.js",
   "module": "dist/esm/index.js",
   "types": "dist/esm/index.d.ts",
