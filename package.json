@@ -29,7 +29,9 @@
     "type": "git",
     "url": "git+https://github.com/tomsdoo/electronade-command.git"
   },
-  "keywords": [],
+  "keywords": [
+    "electronade"
+  ],
   "author": "tom",
   "license": "MIT",
   "bugs": {
