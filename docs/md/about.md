@@ -7,7 +7,7 @@ See [electronade page](https://electronade.netlify.app/) for the structures of `
 ![NPM](https://img.shields.io/npm/l/electronade-command)
 ![npms.io (quality)](https://img.shields.io/npms-io/quality-score/electronade-command)
 ![Libraries.io dependency status for latest release](https://img.shields.io/librariesio/release/npm/electronade-command)
-![Maintenance](https://img.shields.io/maintenance/yes/2022)
+![Maintenance](https://img.shields.io/maintenance/yes/2023)
 
 ## install
 
